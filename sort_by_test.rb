@@ -21,10 +21,9 @@ class SortByTest < Minitest::Test
   end
 
   def test_sort_by_distance
-    skip
     distances = ["1cm", "9cm", "30cm", "4cm", "2cm"]
     sorted = distances.sort_by do |distance|
-      distance[0..1]
+      distance.to_i
     end
     assert_equal ["1cm", "2cm", "4cm", "9cm", "30cm"], sorted
   end
@@ -33,7 +32,7 @@ class SortByTest < Minitest::Test
     words = ["heteromorph", "ancyloceratina", "bioengineering", "mathematical", "bug"]
     sorted = words.sort_by do |word|
       word.length
-    end 
+    end
     assert_equal ["bug", "heteromorph", "mathematical", "ancyloceratina", "bioengineering"], sorted
   end
 
