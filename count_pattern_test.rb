@@ -17,7 +17,7 @@ class CountPatternTest < Minitest::Test
     numbers = [9, 18, 12, 17, 1, 3, 99]
     tally = 0
     numbers.each do |number|
-      # Your code goes here
+      tally += 1 if number > 17
     end
     assert_equal 2, tally
   end
@@ -31,23 +31,29 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_count_words_ending_in_ing
-    skip
     words = ["thought", "brake", "shin", "juice", "trash"]
-    # Your code goes here
+    tally = 0
+    words.each do |word|
+      tally += 1 if word.end_with?("ing")
+    end
     assert_equal 0, tally
   end
 
   def test_count_even_numbers
-    skip
     numbers = [9, 2, 1, 3, 18, 39, 71, 4, 6]
-    # Your code goes here
+    tally = 0
+    numbers.each do |number|
+      tally += 1 if number % 2 == 0
+    end
     assert_equal 4, tally
   end
 
   def test_count_multiples_of_5
-    skip
     numbers = [2, 5, 19, 25, 35, 67]
-    # Your code goes here
+    tally = 0
+    numbers.each do |number|
+      tally += 1 if number % 5 == 0
+    end
     assert_equal 3, tally
   end
 
@@ -59,9 +65,11 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_count_four_letter_words
-    skip
     words = ["bake", "bark", "corn", "apple", "wart", "bird", "umbrella", "fart"]
-    # Your code goes here
+    tally = 0
+    words.each do |word|
+      tally += 1 if word.length == 4
+    end 
     assert_equal 6, tally
   end
 

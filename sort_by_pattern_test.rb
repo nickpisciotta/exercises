@@ -22,7 +22,7 @@ class SortByPatternTest < Minitest::Test
     things = ["pill", "box", "glass", "water", "sponge"]
     transformed = []
     things.each do |thing|
-      # Your code goes here
+      transformed << [thing[-1], thing]
     end
     transformed = transformed.sort
     sorted = []
@@ -46,9 +46,16 @@ class SortByPatternTest < Minitest::Test
   end
 
   def test_sort_by_length
-    skip
     words = ["heteromorph", "ancyloceratina", "bioengineering", "mathematical", "bug"]
-    # Your code goes here
+    transformed = []
+    words.each do |word|
+      transformed << [word.length, word]
+    end
+    transformed = transformed.sort
+    sorted = []
+    transformed.each do |sort_key, word|
+      sorted << word
+    end
     assert_equal ["bug", "heteromorph", "mathematical", "ancyloceratina", "bioengineering"], sorted
   end
 
