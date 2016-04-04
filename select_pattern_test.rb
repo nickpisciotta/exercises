@@ -100,7 +100,7 @@ class SelectPatternTest < Minitest::Test
     hashes = []
     elements.each do |element|
       hashes << element if element.class == Hash
-    end 
+    end git 
     assert_equal [{:dog=>"fido"}, {:stuff=>"things"}], hashes
   end
 
